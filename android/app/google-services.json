@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "920398429552",
+    "project_id": "student-monitoring-f631d",
+    "storage_bucket": "student-monitoring-f631d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920398429552:android:1d30d0ee86d181604ba3b5",
+        "android_client_info": {
+          "package_name": "com.sleepless.student_monitoring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920398429552-4uktbqae5n8u68rudfocv31gsp9n29te.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sleepless.student_monitoring",
+            "certificate_hash": "ba624563a919abcb0fccfa2524a40d64c382092b"
+          }
+        },
+        {
+          "client_id": "920398429552-kbqna6tjebght1vefchjv0ml8ub09nqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADRVqHHrIJj6swMokwqN3YHpQQ2L960U4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920398429552-kbqna6tjebght1vefchjv0ml8ub09nqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
