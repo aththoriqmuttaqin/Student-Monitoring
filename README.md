@@ -1,6 +1,6 @@
 # student_monitoring
 
-Student Monitoring Application
+Aplikasi Student Monitoring
 
 ## Getting Started
 
