@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
+import 'package:student_monitoring/datamodels/user.dart';
 import 'package:student_monitoring/ui/widgets/sturing_button.dart';
 
 import '../../values.dart';
-=======
-
->>>>>>> master
-=======
-
->>>>>>> master
 import 'home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
+  const HomeView({Key key, this.user}) : super(key: key);
+
+  final User user;
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
+      onModelReady: (model) => model.init(user),
       builder: (context, model, child) => Scaffold(
-<<<<<<< HEAD
-<<<<<<< HEAD
         body: Container(
           padding: EdgeInsets.only(top: 30),
           alignment: Alignment.topCenter,
@@ -63,21 +57,11 @@ class HomeView extends StatelessWidget {
               ),
             ],
           ),
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
     );
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   Text sturingText({
     String text,
@@ -95,8 +79,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-=======
->>>>>>> master
-=======
->>>>>>> master
 }

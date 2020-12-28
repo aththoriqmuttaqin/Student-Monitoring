@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import 'package:student_monitoring/ui/widgets/sturing_button.dart';
+import 'package:student_monitoring/ui/widgets/sturing_textfield.dart';
 
 import '../../values.dart';
-=======
+import 'join_room_viewmodel.dart';
 
->>>>>>> master
-=======
-
->>>>>>> master
-import 'home_viewmodel.dart';
-
-class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
+class JoinRoomView extends StatelessWidget {
+  const JoinRoomView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
       builder: (context, model, child) => Scaffold(
-<<<<<<< HEAD
-<<<<<<< HEAD
         body: Container(
           padding: EdgeInsets.only(top: 30),
           alignment: Alignment.topCenter,
@@ -51,33 +42,24 @@ class HomeView extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SturingButton().sturingButton(
+              SturingTextfield().sturingTextField(
                 context: context,
-                text: model.joinRoomText,
-                function: model.joinRoom,
+                controller: model.inputRoomController,
+                hintText: model.codeText,
+                uppercase: true,
               ),
               SturingButton().sturingButton(
                 context: context,
-                text: model.createRoomText,
-                function: model.createRoom,
+                text: model.enterRoomText,
+                function: model.enterRoom,
               ),
             ],
           ),
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
         ),
       ),
-      viewModelBuilder: () => HomeViewModel(),
+      viewModelBuilder: () => JoinRoomViewModel(),
     );
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   Text sturingText({
     String text,
@@ -95,8 +77,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-=======
->>>>>>> master
-=======
->>>>>>> master
 }
