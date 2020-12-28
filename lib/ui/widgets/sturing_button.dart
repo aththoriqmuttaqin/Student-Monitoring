@@ -15,7 +15,7 @@ class SturingButton extends SturingBox {
             text,
             style: TextStyle(
               color: CustomColor.primary300(),
-              fontSize: 16,
+              fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
           ),

@@ -1,7 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:student_monitoring/datamodels/user.dart';
+import 'package:student_monitoring/services/authentication_service.dart';
+import 'package:student_monitoring/services/firestore_service.dart';
 import 'package:student_monitoring/ui/views/forgot/forgot_view.dart';
 import 'package:student_monitoring/ui/views/home/home_view.dart';
 import 'package:student_monitoring/ui/views/register/register_view.dart';
@@ -9,7 +11,9 @@ import 'package:student_monitoring/ui/views/register/register_view.dart';
 import '../../../app/locator.dart';
 
 class AuthViewModel extends BaseViewModel {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirestoreService _firestoreService = locator<FirestoreService>();
+  final AuthenticationService _authenticationService =
+      locator<AuthenticationService>();
   final NavigationService _navigationService = locator<NavigationService>();
   final SnackbarService _snackbarService = locator<SnackbarService>();
   final inputEmailController = TextEditingController();
@@ -23,6 +27,7 @@ class AuthViewModel extends BaseViewModel {
   String _loginText = 'Login';
   String _forgotText = 'Forgot Password?';
   String _registerText = "Don't have account? Sign Up!";
+  User _user;
 
   String get welcomeText => _welcomeText;
   String get sturingText => _sturingText;
@@ -35,7 +40,9 @@ class AuthViewModel extends BaseViewModel {
 
   Future navigateToHome() async {
     await _navigationService.replaceWithTransition(
-      HomeView(),
+      HomeView(
+        user: _user,
+      ),
       transition: NavigationTransition.RightToLeft,
       duration: Duration(milliseconds: 300),
     );
@@ -58,11 +65,18 @@ class AuthViewModel extends BaseViewModel {
   }
 
   void login() async {
-    final FirebaseUser user = (await _auth.signInWithEmailAndPassword(
-            email: inputEmailController.text.trim(),
-            password: inputPasswordController.text))
-        .user;
-    if (user != null) {
+    String email = inputEmailController.text.trim();
+    String password = inputPasswordController.text;
+    bool loggedIn = false;
+
+    User loggedInUser = await _authenticationService.login(email, password);
+
+    if (loggedInUser.getUserId != null || loggedInUser.getUserId != '') {
+      loggedIn = true;
+    }
+
+    if (loggedIn) {
+      _user = await _firestoreService.getUserDetails(loggedInUser.getUserId);
       await navigateToHome();
     } else {
       showSncakbar();

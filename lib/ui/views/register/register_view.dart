@@ -33,6 +33,11 @@ class RegisterView extends StatelessWidget {
                 ),
                 SturingTextfield().sturingTextField(
                   context: context,
+                  controller: model.inputNameController,
+                  hintText: model.nameText,
+                ),
+                SturingTextfield().sturingTextField(
+                  context: context,
                   controller: model.inputEmailController,
                   hintText: model.emailText,
                 ),
