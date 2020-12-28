@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-import 'package:stacked/stacked.dart';
-
-class HomeViewModel extends BaseViewModel {
-  String _studentText = 'Student';
-  String _monitoringText = 'Monitoring';
-  String _optionText = 'Select :';
-  String _joinRoomText = 'Join Room';
-  String _createRoomText = 'Create Room';
-
-  String get studentText => _studentText;
-  String get monitoringText => _monitoringText;
-  String get optionText => _optionText;
-  String get joinRoomText => _joinRoomText;
-  String get createRoomText => _createRoomText;
-
-  void joinRoom() {}
-
-  void createRoom() {}
-=======
-=======
->>>>>>> master
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
->>>>>>> master
 import 'package:stacked/stacked.dart';
 import 'package:student_monitoring/app/locator.dart';
 import 'package:student_monitoring/datamodels/user.dart';
@@ -56,8 +28,4 @@ class HomeViewModel extends BaseViewModel {
   void createRoom() {
     print(_roomService.generateRoomId());
   }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 }

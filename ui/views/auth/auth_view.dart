@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../values.dart';
 import '../../widgets/sturing_button.dart';
 import '../../widgets/sturing_textfield.dart';
-import 'register_viewmodel.dart';
+import 'auth_viewmodel.dart';
 
-class RegisterView extends StatelessWidget {
-  const RegisterView({Key key}) : super(key: key);
+class AuthView extends StatelessWidget {
+  const AuthView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,32 +25,23 @@ class RegisterView extends StatelessWidget {
                   height: 100,
                 ),
                 sturingText(
-                  text: model.registerText,
+                  text: model.welcomeText,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+                sturingText(
+                  text: model.sturingText,
                   fontSize: 28,
                   fontWeight: FontWeight.w600,
                 ),
-                SizedBox(
-                  height: 20,
+                Container(
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10,
+                  ),
+                  child: SvgPicture.asset(model.standingAssetsDir),
                 ),
                 SturingTextfield().sturingTextField(
                   context: context,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-                  controller: model.inputNameController,
-                  hintText: model.nameText,
-                ),
-                SturingTextfield().sturingTextField(
-                  context: context,
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> master
                   controller: model.inputEmailController,
                   hintText: model.emailText,
                 ),
@@ -61,15 +53,50 @@ class RegisterView extends StatelessWidget {
                 ),
                 SturingButton().sturingButton(
                   context: context,
-                  text: model.signUpText,
-                  function: model.register,
+                  text: model.loginText,
+                  function: model.login,
+                ),
+                InkWell(
+                  onTap: model.navigateToForgot,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    child: sturingText(
+                      text: model.forgotText,
+                      fontSize: 14,
+                      underlined: true,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: model.navigateToRegister,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    child: sturingText(
+                      text: model.registerText,
+                      fontSize: 14,
+                      underlined: true,
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
         ),
       ),
-      viewModelBuilder: () => RegisterViewModel(),
+      viewModelBuilder: () => AuthViewModel(),
+    );
+  }
+
+  PreferredSizeWidget sturingAppBar(BuildContext context) {
+    return PreferredSize(
+      preferredSize: Size.fromHeight(50),
+      child: Container(
+        color: CustomColor.primary200(),
+      ),
     );
   }
 

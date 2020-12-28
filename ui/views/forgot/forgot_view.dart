@@ -4,10 +4,10 @@ import 'package:stacked/stacked.dart';
 import '../../values.dart';
 import '../../widgets/sturing_button.dart';
 import '../../widgets/sturing_textfield.dart';
-import 'register_viewmodel.dart';
+import 'forgot_viewmodel.dart';
 
-class RegisterView extends StatelessWidget {
-  const RegisterView({Key key}) : super(key: key);
+class ForgotView extends StatelessWidget {
+  const ForgotView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,13 @@ class RegisterView extends StatelessWidget {
                   height: 100,
                 ),
                 sturingText(
-                  text: model.registerText,
+                  text: model.forgotText,
                   fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                ),
+                sturingText(
+                  text: model.enterEmailText,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
                 SizedBox(
@@ -33,43 +38,20 @@ class RegisterView extends StatelessWidget {
                 ),
                 SturingTextfield().sturingTextField(
                   context: context,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-                  controller: model.inputNameController,
-                  hintText: model.nameText,
-                ),
-                SturingTextfield().sturingTextField(
-                  context: context,
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> master
                   controller: model.inputEmailController,
                   hintText: model.emailText,
                 ),
-                SturingTextfield().sturingTextField(
-                  context: context,
-                  controller: model.inputPasswordController,
-                  hintText: model.passwordText,
-                  passwordInput: true,
-                ),
                 SturingButton().sturingButton(
                   context: context,
-                  text: model.signUpText,
-                  function: model.register,
+                  text: model.sendText,
+                  function: model.forgot,
                 ),
               ],
             ),
           ),
         ),
       ),
-      viewModelBuilder: () => RegisterViewModel(),
+      viewModelBuilder: () => ForgotViewModel(),
     );
   }
 

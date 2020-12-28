@@ -19,6 +19,7 @@ class FirestoreService {
   Future removeUser(String userId) {
     return _db.collection('users').doc(userId).delete();
   }
+<<<<<<< HEAD
 
   Future updateUser(User user) {
     return _db.collection('users').doc(user.getUserId).update({
@@ -38,4 +39,6 @@ class FirestoreService {
     DocumentSnapshot dShot = await _db.collection('users').doc(uid).get();
     return User.fromMap(dShot.data());
   }
+=======
+>>>>>>> master
 }

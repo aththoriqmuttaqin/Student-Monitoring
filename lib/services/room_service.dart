@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:math';
 
 import 'package:battery/battery.dart';
@@ -30,3 +31,9 @@ class RoomService {
     return await _battery.batteryLevel;
   }
 }
+=======
+import 'package:injectable/injectable.dart';
+
+@lazySingleton
+class RoomService {}
+>>>>>>> master

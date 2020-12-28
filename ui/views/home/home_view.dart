@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-<<<<<<< HEAD
 import 'package:student_monitoring/datamodels/user.dart';
 import 'package:student_monitoring/ui/widgets/sturing_button.dart';
 
 import '../../values.dart';
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-import 'package:student_monitoring/ui/widgets/sturing_button.dart';
-
-import '../../values.dart';
-=======
-
->>>>>>> master
-=======
-
->>>>>>> master
->>>>>>> master
 import 'home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
@@ -30,11 +16,6 @@ class HomeView extends StatelessWidget {
     return ViewModelBuilder.reactive(
       onModelReady: (model) => model.init(user),
       builder: (context, model, child) => Scaffold(
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
         body: Container(
           padding: EdgeInsets.only(top: 30),
           alignment: Alignment.topCenter,
@@ -76,27 +57,11 @@ class HomeView extends StatelessWidget {
               ),
             ],
           ),
-<<<<<<< HEAD
-=======
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
-=======
-        body: Center(
-          child: Text('HomeView'),
->>>>>>> master
->>>>>>> master
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
     );
   }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
 
   Text sturingText({
     String text,
@@ -114,11 +79,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> master
 }

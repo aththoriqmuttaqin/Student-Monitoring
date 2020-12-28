@@ -1,8 +1,8 @@
-# student_monitoring
+## student_monitoring
 
-Student Monitoring Application
+Aplikasi Student Monitoring
 
-## Getting Started
+### Getting Started
 
 This project is a starting point for a Flutter application.
 
